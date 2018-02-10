@@ -38,11 +38,15 @@
       color: white;
       margin: 0 auto;
     }
+
+    #x_x {
+      background-color: rgba(135, 181, 255, 0.5);
+    }
     </style>
   </head>
   <body>
     <div id="you-know"><canvas id="dont-touch-me"></canvas></div>
-    <div id="i-dont-really-want-to-think-about-it">I DON'T REALLY WANT TO THINK ABOUT IT</div>
+    <div id="i-dont-really-want-to-think-about-it"><span id="x_x">I DON'T REALLY WANT TO THINK ABOUT IT</span></div>
     <script>
 
       function debounce(delay, f) {
@@ -68,6 +72,7 @@
         "shininess": 5.307599517490953,
         "reflectivity": 0,
       };
+
       app.setup();
       app.update(params);
       app.setPhong(params);
