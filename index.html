@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js"></script>
+    <script src="/OBJLoader.js"></script>
     <script src="/svv.im.bundled.js"></script>
     <style>
     html, body {
@@ -95,7 +96,7 @@
         }
       }
 
-      var app = new svv.GraveyardApp({
+      var app = new svv.ShadyHillApp({
         id: "dont-touch-me",
       });
 
@@ -104,7 +105,8 @@
         "emissive": "#080816",
         "specular": "#8a1fb6",
         "shininess": 5.307599517490953,
-        "reflectivity": 0,
+        "reflectivity": 0.0,
+        "y": 40.0,
       };
 
       app.setup();
@@ -113,7 +115,7 @@
 
       window.addEventListener('load', function (ev) {
         (function loloop() {
-          app.update();
+          app.update(params);
           app.draw();
           requestAnimationFrame(loloop);
         }());
